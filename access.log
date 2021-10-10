@@ -1,0 +1,18 @@
+
+10.0.0.2 - - [28/Sep/2021:08:45:42 +0000] "GET / HTTP/1.1" 200 4434 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+
+2021/09/28 08:45:42 [error] 29#29: *1 open() "/data/media/article/doge_r49gAYd.png" failed (2: No such file or directory), client: 10.0.0.2, server: , request: "GET /media/article/doge_r49gAYd.png HTTP/1.1", host: "34.127.72.233", referrer: "http://34.127.72.233/"
+
+10.0.0.2 - - [28/Sep/2021:08:45:42 +0000] "GET /media/article/doge_r49gAYd.png HTTP/1.1" 404 555 "http://34.127.72.233/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+
+10.0.0.2 - - [28/Sep/2021:08:46:04 +0000] "GET / HTTP/1.1" 200 4434 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+
+2021/09/28 08:46:04 [error] 29#29: *1 open() "/data/media/article/doge_r49gAYd.png" failed (2: No such file or directory), client: 10.0.0.2, server: , request: "GET /media/article/doge_r49gAYd.png HTTP/1.1", host: "34.127.72.233", referrer: "http://34.127.72.233/"
+
+10.0.0.2 - - [28/Sep/2021:08:46:04 +0000] "GET /media/article/doge_r49gAYd.png HTTP/1.1" 404 555 "http://34.127.72.233/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+
+10.0.0.2 - - [28/Sep/2021:08:47:47 +0000] "GET / HTTP/1.1" 200 4434 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+
+2021/09/28 08:47:47 [error] 29#29: *5 open() "/data/media/article/doge_r49gAYd.png" failed (2: No such file or directory), client: 10.0.0.2, server: , request: "GET /media/article/doge_r49gAYd.png HTTP/1.1", host: "34.127.72.233", referrer: "http://34.127.72.233/"
+
+10.0.0.2 - - [28/Sep/2021:08:47:47 +0000] "GET /media/article/doge_r49gAYd.png HTTP/1.1" 404 555 "http://34.127.72.233/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
