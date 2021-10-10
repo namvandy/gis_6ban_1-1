@@ -2,7 +2,7 @@ FROM python:3.8.2
 
 WORKDIR /home/
 
-RUN echo "dfdf"
+RUN echo "putty10"
 
 RUN git clone https://github.com/dhkangBsn/gis_6ban_1-1.git
 
