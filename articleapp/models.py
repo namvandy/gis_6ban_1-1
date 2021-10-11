@@ -3,14 +3,21 @@ from django.db import models
 
 # Create your models here.
 from projectapp.models import Project
-
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
 
 class Article(models.Model):
     writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='article', null=True)
     # User가 탈퇴했을 경우, 작성자 미상(게시글에서) 처럼 되게 한다.
     # OneToOne과 다른 점은 다대다도 가능하다.
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='article/',null=True)
+    image = models.ImageField(upload_to='article/',null=True, )
+    # image = ProcessedImageField(
+    #     upload_to='article/',  # 저장 위치
+    #     processors=[ResizeToFill(600, 600)],  # 처리할 작업 목록
+    #     format='JPEG',  # 저장 포맷(확장자)
+    #     options={'quality': 90},  # 저장 포맷 관련 옵션 (JPEG 압축률 설정)
+    # )
     content = models.TextField(null=True)
     created_at = models.DateField(auto_now_add=True, null=True)
 

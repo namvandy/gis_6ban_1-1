@@ -89,3 +89,15 @@ gis_6ban.pem
 
 gis_6ban_gcp
 gis_6ban_gcp.pub
+
+Dockerfile
+docker-compose.yml
+likelion_pragmatic.pem
+nginx.conf
+rabit.jpg
+articleapp/model.pth
+examples/
+aws.pem
+*.pth
+bert.pth
+tokenizer.pth

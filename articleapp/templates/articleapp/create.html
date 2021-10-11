@@ -54,7 +54,8 @@
             <div class="option">
                 <div>
                     <form onsubmit="searchPlaces(); return false;">
-                        키워드 : <input type="text" value="광주 맛집" id="keyword" size="15">
+                        키워드 : <input type="text" id="keyword" size="15">
+{#                        <input type="text" value="광주 맛집" id="keyword" size="15">#}
                         <button type="submit">검색하기</button>
                     </form>
                 </div>
@@ -66,7 +67,7 @@
     </div>
     위치찍기
     <div id="clickLatlng"></div>
-
+    <div type="submit" class="btn btn-primary"><span id="map_title">지도를 클릭해 주세요.</span></div>
     <div class="text-center mw-500 m-auto">
         <div class="m-5">
             <h4>
@@ -100,6 +101,20 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 // 지도를 생성합니다
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
+// 중심 좌표 이동
+if('geolocation' in navigator) {
+  /* 위치정보 사용 가능 */
+  console.log('geolocation')
+  navigator.geolocation.getCurrentPosition((position) => {
+  console.log(position.coords.latitude, position.coords.longitude);
+  user_geo_location = [position.coords.latitude, position.coords.longitude];
+  console.log(user_geo_location)
+  map.setCenter(new kakao.maps.LatLng(user_geo_location[0], user_geo_location[1]));
+  });
+} else {
+  /* 위치정보 사용 불가능 */
+}
+
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places();
 
@@ -107,7 +122,7 @@ var ps = new kakao.maps.services.Places();
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 // 키워드로 장소를 검색합니다
-searchPlaces();
+{#searchPlaces();#}
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
@@ -310,10 +325,12 @@ function removeAllChildNods(el) {
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        level: 3, // 지도의 확대 레벨
+        marker: markers
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
 
 // 지도를 클릭한 위치에 표출할 마커입니다
 var marker = new kakao.maps.Marker({
@@ -338,6 +355,7 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 
     document.getElementById('id_lat').value=latlng.getLat()
     document.getElementById('id_lon').value=latlng.getLng()
+    document.getElementById('map_title').value="완료"
     console.log('lat',document.getElementById('id_lat').value)
     console.log('lon',document.getElementById('id_lon').value)
 

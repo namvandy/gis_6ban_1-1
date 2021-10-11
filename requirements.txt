@@ -12,7 +12,9 @@ colorama==0.4.4
 datasets==1.12.1
 dill==0.3.4
 Django==3.2.7
+django-appconf==1.0.5
 django-bootstrap4==3.0.1
+django-imagekit==4.0.2
 emoji==1.5.0
 filelock==3.3.0
 fsspec==2021.9.0
@@ -24,6 +26,7 @@ multiprocess==0.70.12.2
 numpy==1.21.2
 packaging==21.0
 pandas==1.3.3
+pilkit==2.0
 Pillow==8.3.2
 pyarrow==5.0.0
 pyparsing==2.4.7
